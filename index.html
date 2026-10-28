@@ -2,150 +2,354 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>🔥 Margo Trenches · Getting Started</title>
 <meta name="description" content="Beginner guide for the Margo Trenches Solana memecoin community: wallet setup, buying SOL, Axiom and Fomo, reading calls, risk management and scam safety.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#0d0b0a">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark light">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 <style>
-:root{--bg:#0d0b0a;--card:#17120f;--line:#2a201a;--txt:#f3ece6;--mut:#b3a69b;--fire:#ff6a1a;--gold:#ffb930;--red:#ff4d4d;--grn:#3ddc84}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--gold)}
-.wrap{max-width:760px;margin:0 auto;padding:0 18px}
-header.hero{padding:56px 0 36px;text-align:center;background:radial-gradient(ellipse at top,rgba(255,106,26,.28),transparent 65%)}
-.badge{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,185,48,.4);border-radius:99px;padding:4px 12px}
-h1{font-size:clamp(30px,8vw,48px);line-height:1.1;margin:18px 0 10px}
-h1 span,.grad{background:linear-gradient(90deg,var(--fire),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--mut);margin:0 auto 26px;max-width:560px}
-.ctas{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;color:#1a0d04;background:linear-gradient(90deg,var(--fire),var(--gold));box-shadow:0 6px 24px rgba(255,106,26,.25)}
-.btn.alt{background:transparent;color:var(--txt);border:1px solid var(--gold);box-shadow:none}
-.btn small{font-weight:500;opacity:.85}
-.note{font-size:13px;color:var(--mut);margin-top:12px}
-nav.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:28px 0 0}
-nav.toc a{font-size:13px;color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 11px}
-section{padding:30px 0;border-top:1px solid var(--line)}
-h2{font-size:24px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
-h2 .n{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:15px;background:linear-gradient(135deg,var(--fire),var(--gold));color:#1a0d04}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
-.card h3{margin:0 0 6px;font-size:17px}
-.card p{margin:0;color:var(--mut)}
-ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
-ol.steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:0 0 18px}
-ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;border:2px solid var(--fire);display:grid;place-items:center;font-weight:700;color:var(--gold);font-size:14px}
-ol.steps b{display:block}
-ol.steps span{color:var(--mut)}
-ul{padding-left:20px}ul li{margin:6px 0}
-.tiers{display:grid;gap:12px}
-@media(min-width:640px){.tiers{grid-template-columns:repeat(3,1fr)}.ctas{flex-direction:row;max-width:none}.ctas .btn{flex:1}}
-.tier{border-radius:14px;padding:16px;background:var(--card);border:1px solid var(--line)}
-.tier .t{font-weight:800;font-size:18px}
-.tier .m{font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin:4px 0 8px}
-.tier p{margin:0;color:var(--mut);font-size:15px}
-.sn{border-top:3px solid var(--red)}.sn .m{color:var(--red)}
-.al{border-top:3px solid var(--fire)}.al .m{color:var(--fire)}
-.ap{border-top:3px solid var(--gold)}.ap .m{color:var(--gold)}
-.warn{background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.35);border-radius:14px;padding:14px 18px}
-.warn strong{color:var(--red)}
-.ok{color:var(--grn)}
-code{background:#221a15;padding:1px 6px;border-radius:6px;font-size:14px}
-footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center}
+:root{
+  --black:#000;--ink:#1d1d1f;--ink2:#161617;--light:#f5f5f7;--white:#fff;
+  --txt:#f5f5f7;--mut:#a1a1a6;--mut-l:#6e6e73;
+  --purple:#9945ff;--teal:#14f195;--blue:#2997ff;--blue-l:#0066cc;
+  --red:#ff6961;--red-l:#d70015;--amber:#ffb340;
+  --grad:linear-gradient(90deg,#b57cff 0%,#7f8cff 45%,#19fb9b 100%);
+  --r:28px;
+  --font:-apple-system,BlinkMacSystemFont,'SF Pro Display',Inter,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:var(--txt);font:17px/1.6 var(--font);-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:var(--blue)}
+a:focus-visible,.pill:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin:0 auto}
+.center{text-align:center}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+code{font:600 .92em ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(255,255,255,.1);padding:2px 8px;border-radius:8px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:16px;height:52px}
+.brand{font-weight:600;font-size:15px;color:var(--txt);text-decoration:none;white-space:nowrap;letter-spacing:-.02em}
+.links{display:flex;gap:4px;margin:0 auto;overflow-x:auto;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 85%,transparent)}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:12.5px;color:#d2d2d7;text-decoration:none;padding:6px 10px;white-space:nowrap;border-radius:99px}
+.links a:hover{color:#fff}
+.nav-cta{flex:none;font-size:12.5px;font-weight:600;color:#fff;background:var(--blue-l);text-decoration:none;padding:5px 14px;border-radius:99px}
+.nav-cta:hover{background:#0077ed}
+@media(max-width:719px){.links{display:none}.nav .wrap{justify-content:space-between}}
+
+/* Sections */
+section{padding:96px 0}
+@media(min-width:900px){section{padding:140px 0}}
+.dark{background:var(--black)}
+.ink{background:var(--ink2)}
+.light{background:var(--light);color:var(--ink)}
+.light a{color:var(--blue-l)}
+.eyebrow{display:block;font-size:17px;font-weight:600;color:var(--mut);margin:0 0 10px;letter-spacing:-.01em}
+.light .eyebrow{color:var(--mut-l)}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.035em;line-height:1.05}
+h1{font-size:clamp(48px,12vw,112px);letter-spacing:-.045em;line-height:1}
+h2{font-size:clamp(36px,7.4vw,80px)}
+h3{font-size:clamp(22px,3vw,28px);letter-spacing:-.025em;line-height:1.15}
+.sub{font-size:clamp(19px,2.6vw,28px);line-height:1.35;color:var(--mut);font-weight:500;letter-spacing:-.02em;margin:20px auto 0;max-width:720px}
+.light .sub{color:var(--mut-l)}
+
+/* Buttons */
+.ctas{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;margin-top:36px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--blue-l);color:#fff;font-size:17px;font-weight:500;text-decoration:none;padding:12px 24px;border-radius:99px;transition:background .2s}
+.pill:hover{background:#0077ed}
+.pill.grad-bg{background:linear-gradient(90deg,#8a3ffc,#5b6cff);}
+.pill.grad-bg:hover{filter:brightness(1.1)}
+.chev{display:inline-flex;align-items:center;gap:4px;font-size:17px;color:var(--blue);text-decoration:none;font-weight:500}
+.chev::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);margin-left:2px}
+.chev:hover{text-decoration:underline}
+.light .chev{color:var(--blue-l)}
+.fine{font-size:15px;color:var(--mut);max-width:620px;margin:22px auto 0;line-height:1.55}
+.light .fine{color:var(--mut-l)}
+
+/* Hero */
+.hero{padding:96px 0 110px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:70%;background:radial-gradient(closest-side,rgba(153,69,255,.35),transparent),radial-gradient(closest-side at 70% 50%,rgba(20,241,149,.18),transparent);filter:blur(40px);pointer-events:none}
+.hero .wrap{position:relative}
+.tag{display:inline-block;font-size:14px;font-weight:600;color:#d2d2d7;margin-bottom:22px}
+@media(min-width:900px){.hero{padding:150px 0 160px}}
+
+/* Statement */
+.statement h2{font-size:clamp(44px,10vw,104px)}
+.trio{display:grid;gap:18px;margin-top:64px;text-align:left}
+@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}}
+.trio div{padding-top:18px;border-top:1px solid #d2d2d7}
+.trio b{display:block;font-size:22px;letter-spacing:-.02em;margin-bottom:6px}
+.trio p{margin:0;color:var(--mut-l)}
+
+/* Steps */
+.steps{list-style:none;margin:72px 0 0;padding:0;display:grid;gap:56px}
+.steps li{display:grid;grid-template-columns:1fr;gap:6px}
+@media(min-width:760px){.steps li{grid-template-columns:150px 1fr;gap:32px;align-items:start}}
+.num{font-size:clamp(72px,14vw,120px);font-weight:700;line-height:.9;letter-spacing:-.06em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps h3{margin:4px 0 10px}
+.steps p{margin:0;color:var(--mut);font-size:18px;line-height:1.65;max-width:640px}
+.steps p em{color:#e8e8ed}
+
+/* Compare */
+.compare{display:grid;gap:20px;margin-top:64px}
+@media(min-width:800px){.compare{grid-template-columns:1fr 1fr}}
+.cmp{background:#fff;border-radius:var(--r);padding:40px 32px;display:flex;flex-direction:column;box-shadow:0 2px 20px rgba(0,0,0,.04)}
+.cmp .k{font-size:14px;font-weight:600;color:var(--mut-l);text-transform:uppercase;letter-spacing:.06em}
+.cmp h3{font-size:40px;margin:8px 0 4px;letter-spacing:-.04em}
+.cmp .big{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0 0 24px}
+.cmp dl{margin:0 0 28px;flex:1}
+.cmp dt{font-size:13px;font-weight:600;color:var(--mut-l);text-transform:uppercase;letter-spacing:.05em;margin-top:18px}
+.cmp dd{margin:4px 0 0;font-size:17px;line-height:1.5}
+.cmp .disc{display:inline-block;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:saturate(1.2) brightness(.8)}
+.cmp .act{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.cmp code{background:#e8e8ed;color:var(--ink)}
+
+/* Bento */
+.bento{display:grid;gap:16px;margin-top:64px}
+@media(min-width:760px){.bento{grid-template-columns:repeat(6,1fr)}}
+.card{background:var(--ink);border-radius:var(--r);padding:34px 30px;position:relative;overflow:hidden}
+.card p{margin:12px 0 0;color:var(--mut);font-size:17px;line-height:1.6}
+.card .ic{font-size:34px;line-height:1;display:block;margin-bottom:18px}
+.card .meta{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:10px}
+@media(min-width:760px){
+  .s2{grid-column:span 2}.s3{grid-column:span 3}.s4{grid-column:span 4}.s6{grid-column:span 6}
+}
+.tier{border-top:0}
+.tier::before{content:"";position:absolute;left:0;right:0;top:0;height:4px}
+.t-sn::before{background:#ff6961}.t-sn .meta{color:#ff8a80}
+.t-al::before{background:#9945ff}.t-al .meta{color:#c7a3ff}
+.t-ap::before{background:#14f195}.t-ap .meta{color:#5ff5b4}
+.tier h3{font-size:32px}
+.every ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:18px}
+@media(min-width:760px){.every ul{grid-template-columns:1fr 1fr;gap:22px 40px}}
+.every li{color:var(--mut);line-height:1.6;padding-left:18px;position:relative}
+.every li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.every li b{color:var(--txt)}
+.ink .card{background:#232325}
+.stat{font-size:clamp(44px,7vw,64px);font-weight:700;letter-spacing:-.05em;line-height:1;margin-top:4px}
+
+/* Scams (light) */
+.alert{margin:56px auto 0;max-width:880px;background:#fff;border:2px solid var(--red-l);border-radius:var(--r);padding:34px 30px;text-align:left}
+.alert h3{color:var(--red-l);font-size:clamp(24px,3.6vw,34px)}
+.alert p{margin:10px 0 0;font-size:19px;color:var(--ink);line-height:1.55}
+.light .bento .card{background:#fff;color:var(--ink)}
+.light .bento .card p{color:#424245}
+.light .bento .card h3{color:var(--ink)}
+.okline{color:#03824a;font-weight:600}
+
+/* Join */
+.price{font-size:clamp(56px,11vw,96px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.price small{font-size:.35em;color:var(--mut);font-weight:600;letter-spacing:-.02em}
+
+/* Risk disclaimer */
+.nfa{background:var(--ink);border:1px solid #3a3a3c;border-radius:var(--r);padding:36px 30px;max-width:880px;margin:0 auto}
+.nfa h3{font-size:clamp(26px,4vw,36px);color:var(--amber)}
+.nfa p{font-size:18px;color:#e8e8ed;margin:12px 0 0;line-height:1.6}
+footer{padding:40px 0 64px;text-align:center;color:var(--mut);font-size:14px;border-top:1px solid #2c2c2e}
 footer p{margin:6px 0}
-svg.i{width:22px;height:22px;flex:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
-<body>
+<body class="no-js">
 
-<header class="hero">
+<nav class="nav" aria-label="Main">
   <div class="wrap">
-    <span class="badge">🔥 Margo Trenches · Getting Started</span>
-    <h1>New to the trenches?<br><span>Start here.</span></h1>
-    <p class="lead">Set up a Solana wallet, get your first SOL, pick a trading app and learn how to read our calls safely. 10 minutes, zero jargon.</p>
-    <div class="ctas">
-      <a class="btn" href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">Sign up on Axiom <small>(our link = 10% lower fees for you)</small></a>
-      <a class="btn alt" href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">Get Fomo on mobile <small>(our link = 10% off fees)</small></a>
+    <a class="brand" href="#top">🔥 Margo Trenches</a>
+    <div class="links">
+      <a href="#setup">Setup</a><a href="#apps">Axiom vs Fomo</a><a href="#calls">Reading calls</a><a href="#risk">Risk</a><a href="#scams">Scam safety</a><a href="#join">Join / upgrade</a>
     </div>
-    <p class="note">These are our referral links. You get the fee discount Axiom and Fomo give to referred users, and it supports the server. The discount only applies if you sign up <em>through the link</em> on a new account.</p>
-    <nav class="toc">
-      <a href="#setup">Setup</a><a href="#calls">Reading calls</a><a href="#risk">Risk</a><a href="#scams">Scam safety</a><a href="#join">Join / upgrade</a>
-    </nav>
+    <a class="nav-cta" href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">Sign up</a>
+  </div>
+</nav>
+
+<header class="hero dark" id="top">
+  <div class="wrap">
+    <span class="tag rv">Margo Trenches · Getting Started</span>
+    <h1 class="rv">New to the trenches?<br><span class="grad">Start here.</span></h1>
+    <p class="sub rv">Wallet, first SOL, a trading app and our calls. 10&nbsp;minutes, zero&nbsp;jargon.</p>
+    <div class="ctas rv">
+      <a class="pill grad-bg" href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">Sign up on Axiom · 10% lower fees</a>
+      <a class="chev" href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">Get Fomo on mobile · 10% off fees</a>
+    </div>
+    <p class="fine rv">These are our referral links. You get the fee discount Axiom and Fomo give to referred users, and it supports the server. The discount only applies if you sign up <em>through the link</em> on a new account.</p>
   </div>
 </header>
 
-<main class="wrap">
-
-<section id="setup">
-  <h2><span class="n">1</span>Step-by-step setup</h2>
-  <ol class="steps">
-    <li><b>Install Phantom wallet</b><span>Only from the official site <a href="https://phantom.com" target="_blank" rel="noopener">phantom.com</a> (browser extension or iOS/Android app). Ads in search results are a common fake-wallet trap.</span></li>
-    <li><b>Secure your seed phrase offline</b><span>Write the 12/24 words on paper and keep it somewhere safe. No screenshots, no cloud notes, no chat. Whoever has these words owns your wallet.</span></li>
-    <li><b>Buy SOL</b><span>Easiest: buy SOL on an exchange (Coinbase, Kraken, Binance…) and withdraw to your Phantom <em>Solana</em> address. Send a tiny test amount first. Alternative: buy directly inside Phantom with card / Apple Pay (more convenient, usually higher fees).</span></li>
-    <li><b>Sign up on Axiom via our link</b><span>Open <a href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">axiom.trade/@lukbuk</a> <em>first</em>, then sign up (email, Google or Phantom). Save the recovery key Axiom shows you offline too. Deposit SOL from Phantom to your Axiom wallet address. This is the fast desktop trading terminal most of us use.</span></li>
-    <li><b>Prefer your phone? Use Fomo</b><span>Open <a href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">fomo.family/r/LevelDeepWorm</a> on your phone before creating the account (if the app asks for a code, enter <code>LevelDeepWorm</code>). Simple mobile app, funding with card / Apple Pay or crypto.</span></li>
-  </ol>
-</section>
-
-<section id="calls">
-  <h2><span class="n">2</span>How to read Margo Trenches calls</h2>
-  <div class="tiers">
-    <div class="tier sn"><div class="t">📡 Sniper</div><div class="m">Earliest · highest risk · most calls</div><p>First signal on a fresh token. Many will fail. Tiny size only.</p></div>
-    <div class="tier al"><div class="t">⚡ Alpha</div><div class="m">Smart-money confirmation</div><p>More tracked wallets are in. Fewer calls, better odds, still risky.</p></div>
-    <div class="tier ap"><div class="t">💠 Apex</div><div class="m">Strongest confirmation · fewest calls</div><p>Highest conviction setups. Still not guaranteed. Size sensibly.</p></div>
-  </div>
-  <div class="card">
-    <h3>Every call shows</h3>
-    <ul>
-      <li><b>MC at call</b>: the market cap when the signal fired. If it's already 3-5x higher, you are late. Don't chase.</li>
-      <li><b>CA</b> (contract address): tap to copy, paste it into Axiom / Fomo search. Always use the CA from our channels, never one posted by a random account.</li>
-      <li><b>Check the chart</b> on <a href="https://dexscreener.com" target="_blank" rel="noopener">DexScreener</a> first: liquidity, volume, holders, is it already pumped?</li>
-      <li><b>Small size.</b> Start with amounts you're fine losing completely while you learn.</li>
-    </ul>
+<section class="light statement">
+  <div class="wrap center">
+    <span class="eyebrow rv">Set up a Solana wallet, get your first SOL, pick a trading app and learn how to read our calls safely.</span>
+    <h2 class="rv">Wallet. SOL.<br><span class="grad" style="filter:brightness(.85)">Your calls.</span></h2>
+    <div class="trio">
+      <div class="rv"><b>Yours.</b><p>Your seed phrase, offline. Whoever has these words owns your wallet.</p></div>
+      <div class="rv"><b>Cheaper.</b><p>Sign up through our link for 10% lower fees on Axiom or 10% off fees on Fomo.</p></div>
+      <div class="rv"><b>Safer.</b><p>Small size, the CA from our channels only, and staff never DMs you first.</p></div>
+    </div>
   </div>
 </section>
 
-<section id="risk">
-  <h2><span class="n">3</span>Risk management basics</h2>
-  <div class="card"><h3>📏 Position sizing</h3><p>Risk about 1-2% of your trading wallet per trade. 1 SOL wallet → 0.01-0.02 SOL per play. Lots of small bets beat one big gamble.</p></div>
-  <div class="card"><h3>💰 Take profits in steps</h3><p>At 2x, sell enough to take your initial back. Then you're playing with house money. Scale out more at 3x, 5x, 10x.</p></div>
-  <div class="card"><h3>🚫 Never chase</h3><p>Missed the entry? Let it go. Green candles you didn't catch aren't losses. Chasing tops is how wallets die.</p></div>
-  <div class="card"><h3>⚙️ Slippage &amp; priority fee</h3><p>Slippage around 10-20% for fresh memecoins, lower for bigger ones. Keep priority fee modest (e.g. ~0.001-0.005 SOL); on small trades high fees eat your profit.</p></div>
-</section>
-
-<section id="scams">
-  <h2><span class="n">4</span>Scam safety</h2>
-  <div class="warn"><strong>Never share your seed phrase or private key.</strong> Not with staff, not with "support", not with anyone. No real team will ever ask for it.</div>
-  <ul>
-    <li><b>Staff never DMs you first.</b> Anyone DMing you "from Margo Trenches" offering help, signals or a giveaway is a scammer. Block and report.</li>
-    <li><b>Fake airdrops &amp; drainers:</b> "claim your tokens" sites and random tokens appearing in your wallet are traps. Don't connect your wallet or sign anything you don't understand.</li>
-    <li><b>Check the CA from our channels only.</b> Scammers copy names and tickers. The contract address is what counts.</li>
-    <li><b>Run a quick check</b> on <a href="https://rugcheck.xyz" target="_blank" rel="noopener">rugcheck.xyz</a>: mint/freeze authority, top-holder concentration, locked liquidity.</li>
-    <li>This site never asks you to connect a wallet. <span class="ok">✔</span></li>
-  </ul>
-</section>
-
-<section id="join">
-  <h2><span class="n">5</span>Join &amp; upgrade</h2>
-  <div class="card">
-    <h3>💎 Premium: 0.5 SOL / 30 days</h3>
-    <p>Full access to the signal channels. Get it in <a href="https://discord.com/channels/1558219162818580500/1564753290753867776" target="_blank" rel="noopener">#💎・buy-access</a> on our Discord.</p>
-  </div>
-  <div class="card">
-    <h3>🎫 Need help?</h3>
-    <p>Open a ticket in <a href="https://discord.com/channels/1558219162818580500/1565104691824566292" target="_blank" rel="noopener">#🎫・support</a>. Only trust replies inside the ticket, never DMs.</p>
+<section class="dark" id="setup">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">1 · Step-by-step setup</span>
+      <h2 class="rv">Five steps.<br><span class="grad">Ten minutes.</span></h2>
+    </div>
+    <ol class="steps">
+      <li class="rv"><div class="num">01</div><div><h3>Install Phantom wallet</h3><p>Only from the official site <a href="https://phantom.com" target="_blank" rel="noopener">phantom.com</a> (browser extension or iOS/Android app). Ads in search results are a common fake-wallet trap.</p></div></li>
+      <li class="rv"><div class="num">02</div><div><h3>Secure your seed phrase offline</h3><p>Write the 12/24 words on paper and keep it somewhere safe. No screenshots, no cloud notes, no chat. Whoever has these words owns your wallet.</p></div></li>
+      <li class="rv"><div class="num">03</div><div><h3>Buy SOL</h3><p>Easiest: buy SOL on an exchange (Coinbase, Kraken, Binance…) and withdraw to your Phantom <em>Solana</em> address. Send a tiny test amount first. Alternative: buy directly inside Phantom with card / Apple Pay (more convenient, usually higher fees).</p></div></li>
+      <li class="rv"><div class="num">04</div><div><h3>Sign up on Axiom via our link</h3><p>Open <a href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">axiom.trade/@lukbuk</a> <em>first</em>, then sign up (email, Google or Phantom). Save the recovery key Axiom shows you offline too. Deposit SOL from Phantom to your Axiom wallet address. This is the fast desktop trading terminal most of us use.</p></div></li>
+      <li class="rv"><div class="num">05</div><div><h3>Prefer your phone? Use Fomo</h3><p>Open <a href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">fomo.family/r/LevelDeepWorm</a> on your phone before creating the account (if the app asks for a code, enter <code>LevelDeepWorm</code>). Simple mobile app, funding with card / Apple Pay or crypto.</p></div></li>
+    </ol>
+    <div class="ctas rv"><a class="chev" href="#apps">Which app is for me</a></div>
   </div>
 </section>
 
-</main>
+<section class="light" id="apps">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">Pick your trading app</span>
+      <h2 class="rv">Desktop or phone.<br>Both cheaper with our link.</h2>
+    </div>
+    <div class="compare">
+      <article class="cmp rv">
+        <span class="k">Desktop</span>
+        <h3>Axiom</h3>
+        <p class="big">The fast desktop trading terminal most of us use.</p>
+        <dl>
+          <dt>Sign up with</dt><dd>Email, Google or Phantom. Open the link <em>first</em>.</dd>
+          <dt>Funding</dt><dd>Deposit SOL from Phantom to your Axiom wallet address.</dd>
+          <dt>Keep safe</dt><dd>Save the recovery key Axiom shows you offline.</dd>
+          <dt>With our link</dt><dd><span class="disc">10% lower fees for you</span></dd>
+        </dl>
+        <div class="act"><a class="pill" href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">Sign up on Axiom</a></div>
+      </article>
+      <article class="cmp rv">
+        <span class="k">Mobile</span>
+        <h3>Fomo</h3>
+        <p class="big">A simple mobile app for trading on your phone.</p>
+        <dl>
+          <dt>Sign up</dt><dd>Open the link on your phone before creating the account.</dd>
+          <dt>Funding</dt><dd>Card / Apple Pay or crypto.</dd>
+          <dt>Referral code</dt><dd>If the app asks for a code, enter <code>LevelDeepWorm</code></dd>
+          <dt>With our link</dt><dd><span class="disc">10% off fees</span></dd>
+        </dl>
+        <div class="act"><a class="pill" href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">Get Fomo on mobile</a></div>
+      </article>
+    </div>
+    <p class="fine center rv">Referral links. The discount only applies if you sign up through the link on a new account. Fee discounts are set by those platforms and can change.</p>
+  </div>
+</section>
+
+<section class="dark" id="calls">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">2 · How to read Margo Trenches calls</span>
+      <h2 class="rv">Three tiers.<br><span class="grad">One rule: small size.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="card tier t-sn s2 rv"><span class="ic" aria-hidden="true">📡</span><h3>Sniper</h3><div class="meta">Earliest · highest risk · most calls</div><p>First signal on a fresh token. Many will fail. Tiny size only.</p></div>
+      <div class="card tier t-al s2 rv"><span class="ic" aria-hidden="true">⚡</span><h3>Alpha</h3><div class="meta">Smart-money confirmation</div><p>More tracked wallets are in. Fewer calls, better odds, still risky.</p></div>
+      <div class="card tier t-ap s2 rv"><span class="ic" aria-hidden="true">💠</span><h3>Apex</h3><div class="meta">Strongest confirmation · fewest calls</div><p>Highest conviction setups. Still not guaranteed. Size sensibly.</p></div>
+      <div class="card every s6 rv">
+        <h3>Every call shows</h3>
+        <ul>
+          <li><b>MC at call</b>: the market cap when the signal fired. If it's already 3-5x higher, you are late. Don't chase.</li>
+          <li><b>CA</b> (contract address): tap to copy, paste it into Axiom / Fomo search. Always use the CA from our channels, never one posted by a random account.</li>
+          <li><b>Check the chart</b> on <a href="https://dexscreener.com" target="_blank" rel="noopener">DexScreener</a> first: liquidity, volume, holders, is it already pumped?</li>
+          <li><b>Small size.</b> Start with amounts you're fine losing completely while you learn.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctas rv"><a class="chev" href="#risk">Learn risk management</a></div>
+  </div>
+</section>
+
+<section class="ink" id="risk">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">3 · Risk management basics</span>
+      <h2 class="rv">Small bets.<br><span class="grad">Long game.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="card s4 rv"><span class="ic" aria-hidden="true">📏</span><h3>Position sizing</h3><div class="stat grad">1-2%</div><p>Risk about 1-2% of your trading wallet per trade. 1 SOL wallet → 0.01-0.02 SOL per play. Lots of small bets beat one big gamble.</p></div>
+      <div class="card s2 rv"><span class="ic" aria-hidden="true">🚫</span><h3>Never chase</h3><p>Missed the entry? Let it go. Green candles you didn't catch aren't losses. Chasing tops is how wallets die.</p></div>
+      <div class="card s3 rv"><span class="ic" aria-hidden="true">💰</span><h3>Take profits in steps</h3><div class="stat grad">2x</div><p>At 2x, sell enough to take your initial back. Then you're playing with house money. Scale out more at 3x, 5x, 10x.</p></div>
+      <div class="card s3 rv"><span class="ic" aria-hidden="true">⚙️</span><h3>Slippage &amp; priority fee</h3><p>Slippage around 10-20% for fresh memecoins, lower for bigger ones. Keep priority fee modest (e.g. ~0.001-0.005 SOL); on small trades high fees eat your profit.</p></div>
+    </div>
+    <div class="ctas rv"><a class="chev" href="#scams">Stay safe from scams</a></div>
+  </div>
+</section>
+
+<section class="light" id="scams">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">4 · Scam safety</span>
+      <h2 class="rv">Your keys.<br>Nobody else's.</h2>
+    </div>
+    <div class="alert rv" role="note">
+      <h3>Never share your seed phrase or private key.</h3>
+      <p>Not with staff, not with "support", not with anyone. No real team will ever ask for it.</p>
+    </div>
+    <div class="bento">
+      <div class="card s3 rv"><h3>Staff never DMs you first.</h3><p>Anyone DMing you "from Margo Trenches" offering help, signals or a giveaway is a scammer. Block and report.</p></div>
+      <div class="card s3 rv"><h3>Fake airdrops &amp; drainers</h3><p>"Claim your tokens" sites and random tokens appearing in your wallet are traps. Don't connect your wallet or sign anything you don't understand.</p></div>
+      <div class="card s3 rv"><h3>Check the CA from our channels only.</h3><p>Scammers copy names and tickers. The contract address is what counts.</p></div>
+      <div class="card s3 rv"><h3>Run a quick check</h3><p>On <a href="https://rugcheck.xyz" target="_blank" rel="noopener">rugcheck.xyz</a>: mint/freeze authority, top-holder concentration, locked liquidity.</p></div>
+    </div>
+    <p class="center rv" style="margin-top:40px;font-size:19px"><span class="okline">✔ This site never asks you to connect a wallet.</span></p>
+  </div>
+</section>
+
+<section class="dark" id="join">
+  <div class="wrap">
+    <div class="narrow center">
+      <span class="eyebrow rv">5 · Join &amp; upgrade</span>
+      <h2 class="rv">Premium.<br><span class="grad">Full access.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="card s4 rv"><span class="ic" aria-hidden="true">💎</span><div class="price">0.5 SOL <small>/ 30 days</small></div><p>Full access to the signal channels. Get it in <a href="https://discord.com/channels/1558219162818580500/1564753290753867776" target="_blank" rel="noopener">#💎・buy-access</a> on our Discord.</p></div>
+      <div class="card s2 rv"><span class="ic" aria-hidden="true">🎫</span><h3>Need help?</h3><p>Open a ticket in <a href="https://discord.com/channels/1558219162818580500/1565104691824566292" target="_blank" rel="noopener">#🎫・support</a>. Only trust replies inside the ticket, never DMs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="nfa rv" role="note">
+      <h3>NFA / DYOR.</h3>
+      <p>Nothing here is financial advice. Memecoins are extremely volatile and most go to zero. Only trade money you can afford to lose.</p>
+      <p>Axiom and Fomo links are referral links. Fee discounts are set by those platforms and can change.</p>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
     <p><b class="grad">🔥 Margo Trenches</b></p>
-    <p><b>NFA / DYOR.</b> Nothing here is financial advice. Memecoins are extremely volatile and most go to zero. Only trade money you can afford to lose.</p>
-    <p>Axiom and Fomo links are referral links. Fee discounts are set by those platforms and can change.</p>
+    <p>Getting Started guide · NFA / DYOR</p>
   </div>
 </footer>
 
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
