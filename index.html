@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔥 Margo Trenches · Getting Started</title>
+<meta name="description" content="Beginner guide for the Margo Trenches Solana memecoin community: wallet setup, buying SOL, Axiom and Fomo, reading calls, risk management and scam safety.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0d0b0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<style>
+:root{--bg:#0d0b0a;--card:#17120f;--line:#2a201a;--txt:#f3ece6;--mut:#b3a69b;--fire:#ff6a1a;--gold:#ffb930;--red:#ff4d4d;--grn:#3ddc84}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+header.hero{padding:56px 0 36px;text-align:center;background:radial-gradient(ellipse at top,rgba(255,106,26,.28),transparent 65%)}
+.badge{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,185,48,.4);border-radius:99px;padding:4px 12px}
+h1{font-size:clamp(30px,8vw,48px);line-height:1.1;margin:18px 0 10px}
+h1 span,.grad{background:linear-gradient(90deg,var(--fire),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);margin:0 auto 26px;max-width:560px}
+.ctas{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;color:#1a0d04;background:linear-gradient(90deg,var(--fire),var(--gold));box-shadow:0 6px 24px rgba(255,106,26,.25)}
+.btn.alt{background:transparent;color:var(--txt);border:1px solid var(--gold);box-shadow:none}
+.btn small{font-weight:500;opacity:.85}
+.note{font-size:13px;color:var(--mut);margin-top:12px}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:28px 0 0}
+nav.toc a{font-size:13px;color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 11px}
+section{padding:30px 0;border-top:1px solid var(--line)}
+h2{font-size:24px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+h2 .n{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:15px;background:linear-gradient(135deg,var(--fire),var(--gold));color:#1a0d04}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--mut)}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:0 0 18px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;border:2px solid var(--fire);display:grid;place-items:center;font-weight:700;color:var(--gold);font-size:14px}
+ol.steps b{display:block}
+ol.steps span{color:var(--mut)}
+ul{padding-left:20px}ul li{margin:6px 0}
+.tiers{display:grid;gap:12px}
+@media(min-width:640px){.tiers{grid-template-columns:repeat(3,1fr)}.ctas{flex-direction:row;max-width:none}.ctas .btn{flex:1}}
+.tier{border-radius:14px;padding:16px;background:var(--card);border:1px solid var(--line)}
+.tier .t{font-weight:800;font-size:18px}
+.tier .m{font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin:4px 0 8px}
+.tier p{margin:0;color:var(--mut);font-size:15px}
+.sn{border-top:3px solid var(--red)}.sn .m{color:var(--red)}
+.al{border-top:3px solid var(--fire)}.al .m{color:var(--fire)}
+.ap{border-top:3px solid var(--gold)}.ap .m{color:var(--gold)}
+.warn{background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.35);border-radius:14px;padding:14px 18px}
+.warn strong{color:var(--red)}
+.ok{color:var(--grn)}
+code{background:#221a15;padding:1px 6px;border-radius:6px;font-size:14px}
+footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center}
+footer p{margin:6px 0}
+svg.i{width:22px;height:22px;flex:none}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">🔥 Margo Trenches · Getting Started</span>
+    <h1>New to the trenches?<br><span>Start here.</span></h1>
+    <p class="lead">Set up a Solana wallet, get your first SOL, pick a trading app and learn how to read our calls safely. 10 minutes, zero jargon.</p>
+    <div class="ctas">
+      <a class="btn" href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">Sign up on Axiom <small>(our link = 10% lower fees for you)</small></a>
+      <a class="btn alt" href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">Get Fomo on mobile <small>(our link = 10% off fees)</small></a>
+    </div>
+    <p class="note">These are our referral links. You get the fee discount Axiom and Fomo give to referred users, and it supports the server. The discount only applies if you sign up <em>through the link</em> on a new account.</p>
+    <nav class="toc">
+      <a href="#setup">Setup</a><a href="#calls">Reading calls</a><a href="#risk">Risk</a><a href="#scams">Scam safety</a><a href="#join">Join / upgrade</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="setup">
+  <h2><span class="n">1</span>Step-by-step setup</h2>
+  <ol class="steps">
+    <li><b>Install Phantom wallet</b><span>Only from the official site <a href="https://phantom.com" target="_blank" rel="noopener">phantom.com</a> (browser extension or iOS/Android app). Ads in search results are a common fake-wallet trap.</span></li>
+    <li><b>Secure your seed phrase offline</b><span>Write the 12/24 words on paper and keep it somewhere safe. No screenshots, no cloud notes, no chat. Whoever has these words owns your wallet.</span></li>
+    <li><b>Buy SOL</b><span>Easiest: buy SOL on an exchange (Coinbase, Kraken, Binance…) and withdraw to your Phantom <em>Solana</em> address. Send a tiny test amount first. Alternative: buy directly inside Phantom with card / Apple Pay (more convenient, usually higher fees).</span></li>
+    <li><b>Sign up on Axiom via our link</b><span>Open <a href="https://axiom.trade/@lukbuk" target="_blank" rel="noopener">axiom.trade/@lukbuk</a> <em>first</em>, then sign up (email, Google or Phantom). Save the recovery key Axiom shows you offline too. Deposit SOL from Phantom to your Axiom wallet address. This is the fast desktop trading terminal most of us use.</span></li>
+    <li><b>Prefer your phone? Use Fomo</b><span>Open <a href="https://fomo.family/r/LevelDeepWorm" target="_blank" rel="noopener">fomo.family/r/LevelDeepWorm</a> on your phone before creating the account (if the app asks for a code, enter <code>LevelDeepWorm</code>). Simple mobile app, funding with card / Apple Pay or crypto.</span></li>
+  </ol>
+</section>
+
+<section id="calls">
+  <h2><span class="n">2</span>How to read Margo Trenches calls</h2>
+  <div class="tiers">
+    <div class="tier sn"><div class="t">📡 Sniper</div><div class="m">Earliest · highest risk · most calls</div><p>First signal on a fresh token. Many will fail. Tiny size only.</p></div>
+    <div class="tier al"><div class="t">⚡ Alpha</div><div class="m">Smart-money confirmation</div><p>More tracked wallets are in. Fewer calls, better odds, still risky.</p></div>
+    <div class="tier ap"><div class="t">💠 Apex</div><div class="m">Strongest confirmation · fewest calls</div><p>Highest conviction setups. Still not guaranteed. Size sensibly.</p></div>
+  </div>
+  <div class="card">
+    <h3>Every call shows</h3>
+    <ul>
+      <li><b>MC at call</b>: the market cap when the signal fired. If it's already 3-5x higher, you are late. Don't chase.</li>
+      <li><b>CA</b> (contract address): tap to copy, paste it into Axiom / Fomo search. Always use the CA from our channels, never one posted by a random account.</li>
+      <li><b>Check the chart</b> on <a href="https://dexscreener.com" target="_blank" rel="noopener">DexScreener</a> first: liquidity, volume, holders, is it already pumped?</li>
+      <li><b>Small size.</b> Start with amounts you're fine losing completely while you learn.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="risk">
+  <h2><span class="n">3</span>Risk management basics</h2>
+  <div class="card"><h3>📏 Position sizing</h3><p>Risk about 1-2% of your trading wallet per trade. 1 SOL wallet → 0.01-0.02 SOL per play. Lots of small bets beat one big gamble.</p></div>
+  <div class="card"><h3>💰 Take profits in steps</h3><p>At 2x, sell enough to take your initial back. Then you're playing with house money. Scale out more at 3x, 5x, 10x.</p></div>
+  <div class="card"><h3>🚫 Never chase</h3><p>Missed the entry? Let it go. Green candles you didn't catch aren't losses. Chasing tops is how wallets die.</p></div>
+  <div class="card"><h3>⚙️ Slippage &amp; priority fee</h3><p>Slippage around 10-20% for fresh memecoins, lower for bigger ones. Keep priority fee modest (e.g. ~0.001-0.005 SOL); on small trades high fees eat your profit.</p></div>
+</section>
+
+<section id="scams">
+  <h2><span class="n">4</span>Scam safety</h2>
+  <div class="warn"><strong>Never share your seed phrase or private key.</strong> Not with staff, not with "support", not with anyone. No real team will ever ask for it.</div>
+  <ul>
+    <li><b>Staff never DMs you first.</b> Anyone DMing you "from Margo Trenches" offering help, signals or a giveaway is a scammer. Block and report.</li>
+    <li><b>Fake airdrops &amp; drainers:</b> "claim your tokens" sites and random tokens appearing in your wallet are traps. Don't connect your wallet or sign anything you don't understand.</li>
+    <li><b>Check the CA from our channels only.</b> Scammers copy names and tickers. The contract address is what counts.</li>
+    <li><b>Run a quick check</b> on <a href="https://rugcheck.xyz" target="_blank" rel="noopener">rugcheck.xyz</a>: mint/freeze authority, top-holder concentration, locked liquidity.</li>
+    <li>This site never asks you to connect a wallet. <span class="ok">✔</span></li>
+  </ul>
+</section>
+
+<section id="join">
+  <h2><span class="n">5</span>Join &amp; upgrade</h2>
+  <div class="card">
+    <h3>💎 Premium: 0.5 SOL / 30 days</h3>
+    <p>Full access to the signal channels. Get it in <a href="https://discord.com/channels/1558219162818580500/1564753290753867776" target="_blank" rel="noopener">#💎・buy-access</a> on our Discord.</p>
+  </div>
+  <div class="card">
+    <h3>🎫 Need help?</h3>
+    <p>Open a ticket in <a href="https://discord.com/channels/1558219162818580500/1565104691824566292" target="_blank" rel="noopener">#🎫・support</a>. Only trust replies inside the ticket, never DMs.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b class="grad">🔥 Margo Trenches</b></p>
+    <p><b>NFA / DYOR.</b> Nothing here is financial advice. Memecoins are extremely volatile and most go to zero. Only trade money you can afford to lose.</p>
+    <p>Axiom and Fomo links are referral links. Fee discounts are set by those platforms and can change.</p>
+  </div>
+</footer>
+
+</body>
+</html>
